@@ -2,7 +2,7 @@ module.exports = {
   HOST : '127.0.0.1',
   USER : 'postgres',
   PASSWORD : 'kajal@123',
-  DB : 'crudapp',
+  DB : 'prismaDB',
   dialect: 'postgres',
   logging:false,
   pool: {

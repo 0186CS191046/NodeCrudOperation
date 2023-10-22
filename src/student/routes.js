@@ -8,6 +8,7 @@ router.get('/:id' ,controller.getStudentById);
 router.post('/' ,controller.postStudent);
 router.delete('/:id' ,controller.removeStudent);
 router.put('/:id' ,controller.putStudent);1
-router.post('/upsert' ,controller.upsert_data);
+
+
 
 module.exports = router;

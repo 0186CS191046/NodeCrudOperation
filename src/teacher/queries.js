@@ -1,12 +1,12 @@
 
 
 const getTeachers = "SELECT * FROM teacher";
-const getTeacherById = "SELECT * FROM teacher WHERE teacher_id = $1"; 
-const postTeacher = "INSERT INTO teacher (name,subject) VALUES($1,$2) ";
-const removeTeacher = "DELETE FROM teacher WHERE teacher_id = $1";
-const putTeacher = "UPDATE teacher SET name=$1, subject=$2 WHERE teacher_id=$3"
+const getTeacherById = "SELECT * FROM teacher WHERE id = $1"; 
+const postTeacher = "INSERT INTO teacher (name,email,subject) VALUES($1,$2,$3) ";
+const removeTeacher = "DELETE FROM teacher WHERE id = $1";
+const putTeacher = "UPDATE teacher SET name=$1, email=$2 ,subject=$3  WHERE id=$4"
 
-const upsert = 'SELECT upsert_teacher($1, $2, $3, $4)'
+
 
 module.exports = {
     getTeachers,
@@ -14,5 +14,5 @@ module.exports = {
     postTeacher,
     removeTeacher,
     putTeacher,
-    upsert
+    
 }

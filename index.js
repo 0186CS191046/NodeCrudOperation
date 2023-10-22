@@ -1,15 +1,14 @@
 const express= require('express');
-// const studentRoutes = require('./src/student/routes')
-// const teacherRoutes = require('./src/teacher/routes')
-// const userRoutes = require('./')
+const studentRoutes = require('./src/student/routes')
+const teacherRoutes = require('./src/teacher/routes')
+const procRoutes = require('./routes/procedureRoutes')
 const app = express();
 const bodyParser = require('body-parser')
-const port = process.env.PORT || 3000;
-// const db = require('./models/server')
-// const router = require('./routes/employeeRoutes.js')
+const port = process.env.PORT || 4000;
 const pdRouter = require("./routes/productroutes.js")
-// const seq = require('./routes/employeeRoutes')
-// const userRoutes = require('./practice/kajal')
+const ctRouter = require("./routes/categoryRoutes.js")
+const mergeRouter = require("./routes/mergeRoutes.js")
+const seq = require('./routes/employeeRoutes.js')
 
 // middleware
 app.use(bodyParser.json())
@@ -17,10 +16,14 @@ app.use(express.json());
 app.use(express.urlencoded({extended : true}))
 
 // routes
-// app.use("/api/students",studentRoutes)
-// app.use("/api/teachers",teacherRoutes)
-// app.use("/api/employees",router)
+app.use("/api/students",studentRoutes)
+app.use("/api/teachers",teacherRoutes)
+app.use("/api/procedure",procRoutes)
+app.use("/api/employees",seq)
 app.use("/api/products",pdRouter)
+app.use("/api/category",ctRouter)
+app.use("/api/mergeProc",mergeRouter)
+
 
 // testing api
 app.get('/',(req,res)=>{

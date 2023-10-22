@@ -60,22 +60,12 @@ const putStudent = (req,res) => {
     });
 }
 
-const upsert_data = async(req,res) => {
-    try{
-        const { id, name,age,address, email, teacher_id } = req.body;
-        await pool.query(queries.upsert, [id, name, age,address, email, teacher_id]);
-        res.status(200).json({ message: 'Student upserted successfully' });
-        // pool.end();
-  } catch (error) {
-    console.error('Error calling stored procedure:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-}
+
 
 module.exports = {
     getStudents,
     getStudentById,
     postStudent,
     removeStudent,
-    putStudent,upsert_data
+    putStudent,
 };

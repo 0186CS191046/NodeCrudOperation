@@ -1,7 +1,7 @@
 const prisma = require("../config/dbCon.js")
 
 const createProduct = async(req,res)=> {
-    const {name,price,description} = req.body
+    const {name,price,description,categoryId} = req.body
     const findProduct = await prisma.product.findUnique({where:{name:name}})
     if (findProduct){
         res.status(400).json({ error: 'name has been already taken.' });
@@ -11,7 +11,8 @@ const createProduct = async(req,res)=> {
             data : {
                 name:name,
                 price:price,
-                description:description  
+                description:description  ,
+                categoryId : categoryId,
             }
         });
         res.status(201).json({ message: 'Product  created successfully.' });    
@@ -52,8 +53,8 @@ const deleteProduct = async(req,res)=> {
 
 const updateProduct = async(req,res)=> {
     const id = req.params.id
-    const {name,price,description} = req.body
-    const updateProduct = await prisma.product.update({where:{id:Number(id)},data:{name,price,description}})
+    const {name,price,description,categoryId} = req.body
+    const updateProduct = await prisma.product.update({where:{id:Number(id)},data:{name,price,description,categoryId}})
     if (updateProduct){
         res.status(200).send(updateProduct)
     }
