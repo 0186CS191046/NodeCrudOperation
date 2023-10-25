@@ -1,7 +1,7 @@
 const express= require('express');
 const studentRoutes = require('./src/student/routes')
 const teacherRoutes = require('./src/teacher/routes')
-const procRoutes = require('./routes/procedureRoutes')
+const procRoutes = require('./routes/procedureRoutes.js')
 const app = express();
 const bodyParser = require('body-parser')
 const port = process.env.PORT || 4000;

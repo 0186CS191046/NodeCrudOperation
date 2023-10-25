@@ -37,7 +37,7 @@ const procedu = async (req,res)=> {
   try {
       // const rawQuery = 'CALL upsertStudent($1,$2,$3,$4,$5,$6)'
     const result = await prisma.$queryRaw`CALL upsertStudent(${id}, ${name}, ${age}, ${address}, ${email}, ${teacher_id})`;
-    console.log(result);
+    // console.log(result);
     res.json({ message: 'Procedure called successfully'},);
   } catch (error) {
     console.error('Error:', error);
