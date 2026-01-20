@@ -1,8 +1,8 @@
 module.exports = {
-  HOST : '127.0.0.1',
+  HOST : 'localhost',
   USER : 'postgres',
-  PASSWORD : 'kajal@123',
-  DB : 'prismaDB',
+  PASSWORD : 'root',
+  DB : 'postgres',
   dialect: 'postgres',
   logging:false,
   pool: {

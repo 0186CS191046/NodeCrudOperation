@@ -1,4 +1,4 @@
-const prisma = require("../config/dbCon.js")
+const prisma = require("../../config/prisma/db.js")
 
 const createProduct = async(req,res)=> {
     const {name,price,description,categoryId} = req.body

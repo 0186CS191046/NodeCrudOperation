@@ -1,11 +1,10 @@
 const express = require('express');
 const app = express();
 const pgp = require('pg-promise')();
-const connectionString = 'postgresql://postgres:kajal@123@localhost:5432/prismaDB?schema=public'; // Replace with your PostgreSQL connection details
+const connectionString = 'postgresql://postgres:root@localhost:5432/postgres?schema=public'; // Replace with your PostgreSQL connection details
 const db = pgp(connectionString);
-const prisma = require('../config/dbCon.js')
+const prisma = require('../../config/prisma/db.js')
 
-console.log("kumari kajal")
 const procedureStudent = async(req,res) => {
     const {id,name,age,address,email,teacher_id} = req.body;
     try {  

@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const router = Router();
-const controller = require('./controller');
+const controller = require('../../controllers/pool/teacher/controller');
 
 router.get('/' ,controller.getTeachers);
 router.get('/:teacher_id' ,controller.getTeacherById);

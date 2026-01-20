@@ -1,4 +1,4 @@
-const pool = require('../../config/db')
+const pool = require('../../../config/pool/db')
 const queries = require('./queries');
 const axios = require('axios');
 

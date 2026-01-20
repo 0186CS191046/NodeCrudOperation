@@ -1,4 +1,4 @@
-const dbConfig = require('../config/dbConfig.js')
+const dbConfig = require('../../config/sequelize/db.js')
 const { Sequelize, DataTypes } = require('sequelize');
 
 const sequelize = new Sequelize(
@@ -26,10 +26,10 @@ const sequelize = new Sequelize(
 
 sequelize.authenticate()
 .then(() => {
-    console.log('Database connection has been established successfully.');
+    console.log('Database connection has been established successfully using sequelize.');
   })
   .catch((err) => {
-    console.error('Unable to connect to the database:', err);
+    console.error('Unable to connect to the database using sequelize:', err);
   });
 
   const db = {}
@@ -38,12 +38,12 @@ sequelize.authenticate()
   db.sequelize = sequelize
 //   console.log(db.Sequelize)
 
-  db.employees = require('./employee')(sequelize,DataTypes)
+  db.employees = require('../../models/sequelize/employee.js')(sequelize,DataTypes)
   
   db.sequelize.sync({force: false})
   .then(()=>{
     console.log('yes re-sync done')
     
   })
-  console.log(db.employees,"hii")
+
 module.exports = db;

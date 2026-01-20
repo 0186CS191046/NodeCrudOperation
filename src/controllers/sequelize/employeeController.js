@@ -1,4 +1,4 @@
-const db = require('../models/server')
+const db = require('../../config/sequelize/server.js')
 
 // create main model
 const Employee = db.employees

@@ -1,7 +1,7 @@
 // // // routes/employeeRoutes.js
 // const express = require('express');
 // const router = express.Router();
-const employeeController = require('../controllers/employeeController.js');
+const employeeController = require('../../controllers/sequelize/employeeController.js');
 const router = require('express').Router()
 
 router.post('/addEmployee', employeeController.addEmployee);
