@@ -1,6 +1,7 @@
-const prisma = require("../config/dbCon.js")
+const { default: config } = require("../../config/index.js");
+const prisma = require("../../config/prisma/db.js")
 const pgp = require('pg-promise')();
-const connectionString = 'postgresql://postgres:kajal@123@localhost:5432/prismaDB?schema=public';
+const connectionString = config.database_url
 const db = pgp(connectionString);
 
 

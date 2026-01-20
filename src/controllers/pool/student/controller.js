@@ -1,5 +1,5 @@
 
-const pool = require('../../config/db')
+const pool = require('../../../config/pool/db')
 const queries = require('./queries');
 // For students
 const getStudents = (req, res) =>{

@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const productController = require("../controllers/productControllers.js")
+const productController = require("../../controllers/prisma/productControllers.js")
 
 
 router.post("/createproduct",productController.createProduct)

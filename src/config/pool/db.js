@@ -1,10 +1,11 @@
-const { Pool } = require('pg')
+const { Pool } = require('pg');
+const {default : config} = require("../index.js")
 
 const pool = new Pool({
-    user: 'postgres',
-    host: '127.0.0.1',
-    database: 'prismaDB',
-    password: 'kajal@123',
+    user: config.db_user,
+    host: config.db_host,
+    database:config.db_name,
+    password: config.db_password,
     port: 5432,
     max:10,
     idleTimeoutMillis: 30000,

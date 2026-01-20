@@ -1,4 +1,4 @@
-const prisma = require("../config/dbCon.js")
+const prisma = require("../../config/prisma/db.js")
 
 const createCategory = async(req,res)=> {
     const {name} = req.body
