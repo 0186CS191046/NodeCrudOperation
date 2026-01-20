@@ -1,10 +1,11 @@
-const { Pool } = require('pg')
+const { Pool } = require('pg');
+const {default : config} = require("../index.js")
 
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'postgres',
-    password: 'root',
+    user: config.db_user,
+    host: config.db_host,
+    database:config.db_name,
+    password: config.db_password,
     port: 5432,
     max:10,
     idleTimeoutMillis: 30000,

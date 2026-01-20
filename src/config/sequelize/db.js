@@ -1,8 +1,10 @@
+const {default : config} = require("../index.js");
+
 module.exports = {
-  HOST : 'localhost',
-  USER : 'postgres',
-  PASSWORD : 'root',
-  DB : 'postgres',
+  HOST : config.db_host,
+  USER : config.db_user,
+  PASSWORD : config.db_password,
+  DB : config.db_name,
   dialect: 'postgres',
   logging:false,
   pool: {
