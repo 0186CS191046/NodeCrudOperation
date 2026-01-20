@@ -1,5 +1,5 @@
 const { Pool } = require('pg');
-const {default : config} = require("../index.js")
+const {default : config} = require("../index.js");
 
 const pool = new Pool({
     user: config.db_user,
